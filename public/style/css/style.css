@@ -250,7 +250,7 @@ body {
 .main {
   padding-top: 205px;
   position: relative;
-  background: url("/public/img/main.png") no-repeat;
+  background: url("../../../img/main.png") no-repeat;
   background-size: cover;
   height: 700px;
   transition: all 0.7s;
