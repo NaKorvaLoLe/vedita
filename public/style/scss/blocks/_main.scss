@@ -1,10 +1,17 @@
 .main{
-    padding-top: 205px;
     position: relative;
-    background: url("../../../../public/img/main.png") no-repeat;
-    background-size: cover;
-    height: 700px;
-    transition: all .7s;
+    margin: 0 auto;
+    width: 100%;
+    
+    &__slider{
+        display: flex;
+    }
+    &__slide{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
     &__arrow{
         position: absolute;
         padding: 20px 30px;
@@ -19,7 +26,7 @@
         }
     }
     &__dots{
-        margin-top: 110px;
+        margin-top: -70px;
         text-align: center;
         display: flex;
         justify-content: center;
@@ -40,6 +47,8 @@
     }
 
     &__wrapper{
+        position: absolute;
+        top: 205px;
         width: 450px;
     }
     &__title{
@@ -76,33 +85,32 @@
 
 @media (width <= 1600px) {
     .main{
-        background-position: right 0px top;
-        height: 500px;
         &__arrow{
             &.left{
-                top: 210px;
+                top: 130px;
                 left: 20px;
             }
             &.right{
-                top: 210px;
+                top: 130px;
                 right: 20px;
             }
         }
         &__wrapper{
-            width: 700px;
-            margin: 0 auto;
+            top: 100px;
+            left: 200px;
         }
         &__title{
             font-size: 5.6rem;
+        }
+        &__dots{
+            margin-top: -30px;
         }
     }
 }
 
 @media (width <= 1200px) {
     .main{
-        padding-top: 150px;
-        background-position: right 0px top;
-        height: 500px;
+        margin-bottom: 50px;
         &__arrow{
             &.left{
                 left: 20px;
@@ -112,8 +120,8 @@
             }
         }
         &__wrapper{
-            width: 500px;
-            margin: 0 auto;
+            width: 470px;
+            top: 50px;
         }
         &__title{
             font-size: 4rem;
@@ -123,22 +131,25 @@
 
 @media (width <= 992px) {
     .main{
-        padding-top: 150px;
-        height: 500px;
         &__arrow{
             &.left{
+                top: 100px;
                 left: 20px;
             }
             &.right{
+                top: 100px;
                 right: 20px;
             }
         }
         &__wrapper{
-            width: 500px;
-            margin: 0 auto;
+            width: 400px;
+            left: 150px;
         }
         &__title{
-            font-size: 4rem;
+            font-size: 3rem;
+        }
+        &__subtitle{
+            font-size: 1.5rem;
         }
     }
 }
@@ -147,22 +158,35 @@
     .main{
         &__arrow{
             padding: 10px;
+            height: 40px;
             &.left{
+                top: 80px;
                 left: 10px;
             }
             &.right{
+                top: 80px;
                 right: 10px;
             }
         }
         &__wrapper{
-            width: 420px;
-            margin: 0 auto;
+            width: 400px;
+            left: 100px;
         }
         &__title{
-            font-size: 3.6rem;
+            font-size: 3rem;
         }
         &__subtitle{
-            font-size: 2rem;
+            font-size: 1.4rem;
+            & span{
+                font-size: 1.8rem; 
+            }
+        }
+        &__btn{
+            margin-top: 10px;
+            font-size: 1.4rem;
+            width: 125px;
+            height: 38px;
+            padding: 10px 32px;
         }
 
     }
@@ -170,50 +194,37 @@
 
 @media (width <= 576px) {
     .main{
-        padding-top: 100px;
-        background-position: right 0 top;
-        height: 400px;
         &__arrow{
+            height: 40px;
             padding: 10px;
-            &.left{
-                top: 170px;
-            }
-            &.right{
-                top: 170px;
-            }
+            display: none;
         }
         &__wrapper{
-            width: 200px;
-            margin: 0 auto;
+            top: 20px;
+            left: 50px;
+            width: 250px;
         }
         &__title{
-            font-size: 2.6rem;
+            margin: 0;
+            font-size: 1.6rem;
         }
         &__subtitle{
-            font-size: 1.4rem;
+            margin-top: 5px;
+            line-height: 1.2rem;
+            font-size: 1.0rem;
             & span{
-                font-size: 1.8rem;
+                font-size: 1.4rem;
             }
         }
-
-    }
-}
-
-
-@keyframes slide-left{
-    0%{
-        transform: translateX(-2000px);
-    }
-    100%{
-        transform: translateX(0px);
-    }
-}
-
-@keyframes slide-right{
-    0%{
-        transform: translateX(2000px);
-    }
-    100%{
-        transform: translateX(0px);
+        &__btn{
+            margin-top: 10px;
+            font-size: 1.4rem;
+            width: 85px;
+            height: 28px;
+            padding: 5px 12px;
+        }
+        &__dots{
+            display: none;
+        }
     }
 }

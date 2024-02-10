@@ -248,12 +248,17 @@ body {
   }
 }
 .main {
-  padding-top: 205px;
   position: relative;
-  background: url("../../../img/main.png") no-repeat;
-  background-size: cover;
-  height: 700px;
-  transition: all 0.7s;
+  margin: 0 auto;
+  width: 100%;
+}
+.main__slider {
+  display: flex;
+}
+.main__slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .main__arrow {
   position: absolute;
@@ -269,7 +274,7 @@ body {
   right: 80px;
 }
 .main__dots {
-  margin-top: 110px;
+  margin-top: -70px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -289,6 +294,8 @@ body {
   background-color: #fff;
 }
 .main__wrapper {
+  position: absolute;
+  top: 205px;
   width: 450px;
 }
 .main__title {
@@ -320,31 +327,28 @@ body {
 }
 
 @media (width <= 1600px) {
-  .main {
-    background-position: right 0px top;
-    height: 500px;
-  }
   .main__arrow.left {
-    top: 210px;
+    top: 130px;
     left: 20px;
   }
   .main__arrow.right {
-    top: 210px;
+    top: 130px;
     right: 20px;
   }
   .main__wrapper {
-    width: 700px;
-    margin: 0 auto;
+    top: 100px;
+    left: 200px;
   }
   .main__title {
     font-size: 5.6rem;
   }
+  .main__dots {
+    margin-top: -30px;
+  }
 }
 @media (width <= 1200px) {
   .main {
-    padding-top: 150px;
-    background-position: right 0px top;
-    height: 500px;
+    margin-bottom: 50px;
   }
   .main__arrow.left {
     left: 20px;
@@ -353,74 +357,52 @@ body {
     right: 20px;
   }
   .main__wrapper {
-    width: 500px;
-    margin: 0 auto;
+    width: 470px;
+    top: 50px;
   }
   .main__title {
     font-size: 4rem;
   }
 }
 @media (width <= 992px) {
-  .main {
-    padding-top: 150px;
-    height: 500px;
-  }
   .main__arrow.left {
+    top: 100px;
     left: 20px;
   }
   .main__arrow.right {
+    top: 100px;
     right: 20px;
   }
   .main__wrapper {
-    width: 500px;
-    margin: 0 auto;
+    width: 400px;
+    left: 150px;
   }
   .main__title {
-    font-size: 4rem;
+    font-size: 3rem;
+  }
+  .main__subtitle {
+    font-size: 1.5rem;
   }
 }
 @media (width <= 768px) {
   .main__arrow {
     padding: 10px;
+    height: 40px;
   }
   .main__arrow.left {
+    top: 80px;
     left: 10px;
   }
   .main__arrow.right {
+    top: 80px;
     right: 10px;
   }
   .main__wrapper {
-    width: 420px;
-    margin: 0 auto;
+    width: 400px;
+    left: 100px;
   }
   .main__title {
-    font-size: 3.6rem;
-  }
-  .main__subtitle {
-    font-size: 2rem;
-  }
-}
-@media (width <= 576px) {
-  .main {
-    padding-top: 100px;
-    background-position: right 0 top;
-    height: 400px;
-  }
-  .main__arrow {
-    padding: 10px;
-  }
-  .main__arrow.left {
-    top: 170px;
-  }
-  .main__arrow.right {
-    top: 170px;
-  }
-  .main__wrapper {
-    width: 200px;
-    margin: 0 auto;
-  }
-  .main__title {
-    font-size: 2.6rem;
+    font-size: 3rem;
   }
   .main__subtitle {
     font-size: 1.4rem;
@@ -428,21 +410,46 @@ body {
   .main__subtitle span {
     font-size: 1.8rem;
   }
+  .main__btn {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    width: 125px;
+    height: 38px;
+    padding: 10px 32px;
+  }
 }
-@keyframes slide-left {
-  0% {
-    transform: translateX(-2000px);
+@media (width <= 576px) {
+  .main__arrow {
+    height: 40px;
+    padding: 10px;
+    display: none;
   }
-  100% {
-    transform: translateX(0px);
+  .main__wrapper {
+    top: 20px;
+    left: 50px;
+    width: 250px;
   }
-}
-@keyframes slide-right {
-  0% {
-    transform: translateX(2000px);
+  .main__title {
+    margin: 0;
+    font-size: 1.6rem;
   }
-  100% {
-    transform: translateX(0px);
+  .main__subtitle {
+    margin-top: 5px;
+    line-height: 1.2rem;
+    font-size: 1rem;
+  }
+  .main__subtitle span {
+    font-size: 1.4rem;
+  }
+  .main__btn {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    width: 85px;
+    height: 28px;
+    padding: 5px 12px;
+  }
+  .main__dots {
+    display: none;
   }
 }
 .advantages {
@@ -450,7 +457,7 @@ body {
   justify-content: space-between;
 }
 .advantages__elem {
-  margin-top: 90px;
+  margin-top: 140px;
 }
 .advantages__elem:nth-child(1) p {
   max-width: 226px;

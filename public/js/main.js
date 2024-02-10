@@ -1,4 +1,9 @@
+
+
 //  Popup
+
+
+
 const btn = document.querySelector('.delivery__btn');
 const popup = document.querySelector('.popup');
 const closePopup = document.querySelector('.popup__close');
@@ -52,21 +57,61 @@ closeContent(closeNavbar, navbar);
 
 
 
-
-
-
-// Slider
-
 const prevButton = document.querySelector('.left');
 const nextButton = document.querySelector('.right');
-const background = document.querySelector('.main');
+const slider = document.querySelector('.main__slider');
+const slides = Array.from(slider.querySelectorAll('.main__slide'));
+const slideCount = slides.length;
+let slideIndex = 0;
 
 const dotsBlock = document.querySelector('.main__dots');
 const dots = document.querySelectorAll('.main__dot');
 
-const slides = ['main.png', 'fruits.png', 'smuzi.png']
 
-let counter = 0;
+
+
+// Логика слайдера
+
+// Устанавливаем обработчики событий для кнопок
+prevButton.addEventListener('click', showPreviousSlide);
+nextButton.addEventListener('click', showNextSlide);
+
+// Функция для показа предыдущего слайда
+function showPreviousSlide() {
+    
+    
+    slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+  updateSlider();
+}
+
+// Функция для показа следующего слайда
+function showNextSlide() {
+  slideIndex = (slideIndex + 1) % slideCount;
+  updateSlider();
+  
+}
+
+// Функция для обновления отображения слайдера
+function updateSlider() {
+  slides.forEach((slide, index) => {
+
+    if (index === slideIndex) {
+      slide.style.display = 'block';
+      for ( const dot of dots){
+        dot.classList.remove("active");
+        }
+      dots[slideIndex].classList.add("active");
+    } else {
+      slide.style.display = 'none';
+    }
+  });
+}
+
+
+// Инициализация слайдера
+updateSlider();
+
+
 
 
 
@@ -80,27 +125,9 @@ dotsBlock.addEventListener('click', e => {
         for ( const dot of dots){
             dot.classList.remove("active");
         }
-        counter = target.dataset.id - 1;
-        background.style.backgroundImage = `url('/public/img/${slides[counter]}')`;
+        slides[slideIndex].style.display = 'none';
+        slideIndex = target.dataset.id - 1;
+        slides[slideIndex].style.display = 'block';
         target.classList.add("active");
     }
-})
-
-
-// Логика слайдера
-
-prevButton.addEventListener("click", function(){
-    counter--
-    if(counter < 0){
-        counter=slides.length - 1;
-    }
-    background.style.backgroundImage = `url('/public/img/${slides[counter]}')`;
-})
-
-nextButton.addEventListener("click", function(){
-    counter++
-    if(counter > slides.length - 1){
-        counter = 0;
-    }
-    background.style.backgroundImage = `url('/public/img/${slides[counter]}')`;
 })
