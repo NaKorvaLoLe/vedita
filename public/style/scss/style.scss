@@ -1,0 +1,43 @@
+@import "base/variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  
+}
+a{
+    text-decoration: none;
+    color: $second-color;
+}
+
+html{
+    font-family: "Roboto", sans-serif;
+    font-size: 10px;
+    color: $second-color;
+    scroll-behavior: smooth;
+}
+
+body{
+    border-color: #fff;
+    
+}
+.container {
+  max-width: 1181px;
+  margin: 0 auto;
+}
+
+.btn{
+    border-radius: 10px;
+    background-color: $main-color;
+    color: #fff;
+    cursor: pointer;
+}
+
+@import "blocks/header";
+@import "blocks/main";
+@import "blocks/advantages";
+@import "blocks/rations";
+@import "blocks/about";
+@import "blocks/delivery";
+@import "blocks/footer";
+@import "blocks/popup";

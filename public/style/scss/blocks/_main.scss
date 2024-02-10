@@ -1,0 +1,219 @@
+.main{
+    padding-top: 205px;
+    position: relative;
+    background: url("/public/img/main.png") no-repeat;
+    background-size: cover;
+    height: 700px;
+    transition: all .7s;
+    &__arrow{
+        position: absolute;
+        padding: 20px 30px;
+        cursor: pointer;
+        &.left{
+            top: 310px;
+            left: 80px;
+        }
+        &.right{
+            top: 310px;
+            right: 80px;
+        }
+    }
+    &__dots{
+        margin-top: 110px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    &__dot{
+        cursor: pointer;
+        width: 10px;
+        height: 10px;
+        border: solid 2px #fff;
+        border-radius: 50%;
+        margin-right: 15px;
+        &:last-child{
+            margin-right: 0;
+        }
+        &.active{
+            background-color: #fff;
+        }
+    }
+
+    &__wrapper{
+        width: 450px;
+    }
+    &__title{
+        font-weight: 800;
+        color: #fff;
+        font-size: 6.4rem;
+        letter-spacing: 3px;
+        & span{
+            color: $main-color;
+        }
+    }
+    &__subtitle{
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 2.1rem;
+        line-height: 40px;
+        & span{
+            font-weight: 800;
+            font-size: 3.2rem;
+        }
+    }
+    &__btn{
+        margin-top: 20px;
+        display: block;
+        font-size: 1.6rem;
+        width: 175px;
+        height: 44px;
+        padding: 13px 52px;
+    }
+
+}
+
+
+
+@media (width <= 1600px) {
+    .main{
+        background-position: right 0px top;
+        height: 500px;
+        &__arrow{
+            &.left{
+                top: 210px;
+                left: 20px;
+            }
+            &.right{
+                top: 210px;
+                right: 20px;
+            }
+        }
+        &__wrapper{
+            width: 700px;
+            margin: 0 auto;
+        }
+        &__title{
+            font-size: 5.6rem;
+        }
+    }
+}
+
+@media (width <= 1200px) {
+    .main{
+        padding-top: 150px;
+        background-position: right 0px top;
+        height: 500px;
+        &__arrow{
+            &.left{
+                left: 20px;
+            }
+            &.right{
+                right: 20px;
+            }
+        }
+        &__wrapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+        &__title{
+            font-size: 4rem;
+        }
+    }
+}
+
+@media (width <= 992px) {
+    .main{
+        padding-top: 150px;
+        height: 500px;
+        &__arrow{
+            &.left{
+                left: 20px;
+            }
+            &.right{
+                right: 20px;
+            }
+        }
+        &__wrapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+        &__title{
+            font-size: 4rem;
+        }
+    }
+}
+
+@media (width <= 768px) {
+    .main{
+        &__arrow{
+            padding: 10px;
+            &.left{
+                left: 10px;
+            }
+            &.right{
+                right: 10px;
+            }
+        }
+        &__wrapper{
+            width: 420px;
+            margin: 0 auto;
+        }
+        &__title{
+            font-size: 3.6rem;
+        }
+        &__subtitle{
+            font-size: 2rem;
+        }
+
+    }
+}
+
+@media (width <= 576px) {
+    .main{
+        padding-top: 100px;
+        background-position: right 0 top;
+        height: 400px;
+        &__arrow{
+            padding: 10px;
+            &.left{
+                top: 170px;
+            }
+            &.right{
+                top: 170px;
+            }
+        }
+        &__wrapper{
+            width: 200px;
+            margin: 0 auto;
+        }
+        &__title{
+            font-size: 2.6rem;
+        }
+        &__subtitle{
+            font-size: 1.4rem;
+            & span{
+                font-size: 1.8rem;
+            }
+        }
+
+    }
+}
+
+
+@keyframes slide-left{
+    0%{
+        transform: translateX(-2000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slide-right{
+    0%{
+        transform: translateX(2000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
